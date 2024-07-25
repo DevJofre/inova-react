@@ -3,7 +3,10 @@ import './home.css'
 
 const Home = () => {
     return (
-        <div>Home</div>
+        <section className="home">
+            <div className="overlay"></div>
+            <video src=""></video>
+        </section>
     )
 }
 
