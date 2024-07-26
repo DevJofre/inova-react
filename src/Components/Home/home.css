@@ -70,5 +70,65 @@
         font-size: 1.8rem;
       }
     }
+
+    .cardDiv {
+      padding: 2rem 1rem;
+      background: var(--whiteColor);
+      border-radius: 10px;
+      gap: 1rem;
+
+      label {
+        display: block;
+        color: var(--textColor);
+        padding-bottom: 10px;
+        font-size: 13px;
+        font-weight: 500;
+      }
+
+      .input {
+        height: 40px;
+        padding: 0 1rem;
+        background: var(--inputColor);
+        border-radius: 3rem;
+
+        input {
+          background: none;
+          border: none;
+          outline: none;
+          width: 100%;
+          font-size: 13px;
+          font-weight: 500;
+
+          &::placeholder {
+            font-size: 13px;
+          }
+        }
+
+        .icon {
+          font-size: 18px;
+          color: var(--PrimaryColor);
+          margin-left: 10px;
+        }
+
+        .input[type="rage"] {
+          background: blue;
+        }
+      }
+    }
+
+    .homeFooterIcons {
+      width: 100%;
+      justify-content: space-between;
+
+      .icon {
+        font-size: 20px;
+        margin: 0 5px;
+        color: var(--whiteColor);
+        font-weight: 600;
+        &:hover {
+          color: var(--PrimaryColor);
+        }
+      }
+    }
   }
 }
