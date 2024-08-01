@@ -1,9 +1,12 @@
-import React from "react";
+import React, {useEffect} from "react";
 import './main.css'
 
 import img from '../../Assets/img1.png'
 import { IoBagHandleSharp } from "react-icons/io5";
 import { HiOutlineClipboardCheck } from "react-icons/hi";
+
+import Aos from 'aos'
+import'aos/dist/aos.css'
 
 const Data = [
     {
@@ -18,6 +21,11 @@ const Data = [
 ]
 
 const Main = () => {
+
+    useEffect(() => {
+        Aos.init({ duration: 2000 });
+    }, []);
+
     return (
         <section className="main container section">
             <div className="secTitle">
@@ -31,7 +39,7 @@ const Main = () => {
                 {
                     Data.map(({id, imgSrc, product, brand , grade, fees, description })=>{
                         return(
-                            <div key={id} className="singleDestinatarion">
+                            <div key={id} data-aos="fade-up" className="singleDestinatarion">
                                 <div className="imageDiv">
                                     <img src={imgSrc} alt={product} />
                                 </div>
