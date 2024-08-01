@@ -46,7 +46,7 @@ const Home = () => {
                     </div>
                 </div>
 
-                <div data-aos="fade-up" className="homeFooterIcons flex">
+                <div  className="homeFooterIcons flex">
 
                     <div className="rightIcons">
                         <SlSocialFacebook className="icon" />
