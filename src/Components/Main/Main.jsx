@@ -17,6 +17,46 @@ const Data = [
         grade: "nota",
         fees: "$26",
         description:"descrição do produto descrição do produto descrição do produto descrição do produto descrição do produto"
+    },
+
+    {
+        id:1,
+        imgSrc: img,
+        product:"produto1",
+        brand: "marca",
+        grade: "nota",
+        fees: "$26",
+        description:"descrição do produto descrição do produto descrição do produto descrição do produto descrição do produto"
+    },
+
+    {
+        id:1,
+        imgSrc: img,
+        product:"produto1",
+        brand: "marca",
+        grade: "nota",
+        fees: "$26",
+        description:"descrição do produto descrição do produto descrição do produto descrição do produto descrição do produto"
+    },
+
+    {
+        id:1,
+        imgSrc: img,
+        product:"produto1",
+        brand: "marca",
+        grade: "nota",
+        fees: "$26",
+        description:"descrição do produto descrição do produto descrição do produto descrição do produto descrição do produto"
+    },
+
+    {
+        id:1,
+        imgSrc: img,
+        product:"produto1",
+        brand: "marca",
+        grade: "nota",
+        fees: "$26",
+        description:"descrição do produto descrição do produto descrição do produto descrição do produto descrição do produto"
     }
 ]
 
