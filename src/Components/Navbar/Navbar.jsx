@@ -2,15 +2,14 @@ import React, { useState } from "react";
 import "./navbar.css";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { TbGridDots } from "react-icons/tb";
-import { FaCentos } from "react-icons/fa";
 
 const Navbar = () => {
   const [active, setActive] = useState("navBar");
-
+  // Function to toggle navBar
   const showNav = () => {
     setActive("navBar activeNavbar");
   };
-
+  // Function to remover navBar
   const removeNav = () => {
     setActive("navBar");
   };
@@ -18,46 +17,51 @@ const Navbar = () => {
     <section className="navbarSection">
       <header className="header flex">
         <div className="logoDiv">
-          <a href="#" className="logo flex">
-            <FaCentos className="icon" />
-            <h1>Inova</h1>
+          <a href="http://localhost:3000/" className="logo flex">
+            <h1> Inova </h1>
           </a>
         </div>
 
         <div className={active}>
           <ul className="navLists flex">
             <li className="navItem">
-              <a href="#" className="navLink">
+              <a href="http://localhost:3000/" className="navLink">
                 Inicio
               </a>
             </li>
 
             <li className="navItem">
-              <a href="#" className="navLink">
-                Top Produtos
-              </a>
-            </li>
-
-            <li className="navItem">
-              <a href="#" className="navLink">
+              <a href="http://localhost:3000/" className="navLink">
                 Shop
               </a>
             </li>
 
             <li className="navItem">
-              <a href="#" className="navLink">
-                Contato
+              <a href="http://localhost:3000/" className="navLink">
+                Sobre
               </a>
             </li>
 
             <li className="navItem">
-              <a href="#" className="navLink">
+              <a href="http://localhost:3000/" className="navLink">
+                Contatos
+              </a>
+            </li>
+
+            <li className="navItem">
+              <a href="http://localhost:3000/" className="navLink">
                 Suporte
               </a>
             </li>
 
+            <li className="navItem">
+              <a href="http://localhost:3000/" className="navLink">
+                Cadastra
+              </a>
+            </li>
+
             <button className="btn">
-              <a href="#">Compre Agora</a>
+              <a href="http://localhost:3000/">Entra</a>
             </button>
           </ul>
 
