@@ -29,7 +29,7 @@ const Main = () => {
     return (
         <section className="main container section">
             <div className="secTitle">
-                <h3 className="title">
+                <h3 data-aos="fade-right" className="title">
                     Cosmeticos disponiveis
                 </h3>
             </div>
