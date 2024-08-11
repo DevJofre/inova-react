@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./navbar.css";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { TbGridDots } from "react-icons/tb";
+import {Link} from "react-router-dom"
 
 const Navbar = () => {
   const [active, setActive] = useState("navBar");
@@ -61,7 +62,7 @@ const Navbar = () => {
             </li>
 
             <button className="btn">
-              <a href="http://localhost:3000/">Entra</a>
+              <Link to="/login" > Entra </Link>
             </button>
           </ul>
 

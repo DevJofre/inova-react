@@ -1,0 +1,75 @@
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f5f5f5;
+}
+.login-container .login-form {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+}
+.login-container .login-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.login-container .login-form .form-group {
+  margin-bottom: 15px;
+}
+.login-container .login-form .form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+.login-container .login-form .form-group input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.login-container .login-form button[type=submit] {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+.login-container .login-form button[type=submit]:hover {
+  background-color: #0056b3;
+}
+.login-container .login-form .forgot-password {
+  display: block;
+  text-align: center;
+  color: #007bff;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+.login-container .login-form .forgot-password:hover {
+  text-decoration: underline;
+}
+.login-container .login-form .google-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px auto 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: white;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+.login-container .login-form .google-login:hover {
+  background-color: #f1f1f1;
+}
+.login-container .login-form .google-login svg {
+  width: 24px;
+  height: 24px;
+}/*# sourceMappingURL=login.css.map */

@@ -1,18 +1,20 @@
 import React from "react";
-import "./app.css";
+import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./Components/Navbar/Navbar";
-import Home from "./Components/Home/Home";
-import Main from "./Components/Main/Main";
-import Footer from "./Components/Footer/Footer";
+import Principal from "./pages/Principal";
+import Login from "./pages/Login";
+import "./firebaseConfig";
 
 const App = () => {
   return (
-    <>
+    <Router>
       <Navbar />
-      <Home />
-      <Main />
-      <Footer />
-    </>
+      <Routes>
+        <Route path="/" exact element={<Principal />}></Route>
+        <Route path="/login" exact element={<Login />}></Route>
+      </Routes>
+    </Router>
   );
 };
 
