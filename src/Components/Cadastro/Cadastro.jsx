@@ -22,11 +22,11 @@ const Cadastro = () => {
       return;
     }
 
-    // Adicione a lógica de cadastro de usuário aqui
+    
     const auth = getAuth();
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        // Usuário cadastrado com sucesso
+        
         console.log('User signed up:', userCredential.user);
       })
       .catch((error) => {

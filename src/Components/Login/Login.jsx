@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './login.scss';
 import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
-import { FcGoogle } from 'react-icons/fc'; // Ícone do Google
+import { FcGoogle } from 'react-icons/fc'; 
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -9,7 +9,7 @@ const Login = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Adicione a lógica de autenticação aqui
+    
     console.log('Email:', email);
     console.log('Password:', password);
   };
@@ -20,7 +20,7 @@ const Login = () => {
     
     signInWithPopup(auth, provider)
       .then((result) => {
-        // Usuário autenticado com sucesso
+        
         console.log('Google Sign-In successful:', result.user);
       })
       .catch((error) => {
