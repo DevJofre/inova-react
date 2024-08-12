@@ -4,6 +4,7 @@ import './main.css'
 import img from '../../Assets/img1.png'
 import { IoBagHandleSharp } from "react-icons/io5";
 import { HiOutlineClipboardCheck } from "react-icons/hi";
+import {Link} from "react-router-dom"
 
 import Aos from 'aos'
 import'aos/dist/aos.css'
@@ -85,7 +86,10 @@ const Main = () => {
                                 </div>
 
                                 <div className="cardInfo">
-                                    <h4 className="destTitle"> {product} </h4>
+                                    <Link to="/product" className="destTitle">
+                                        <h4 className="destTitle"> {product} </h4>
+                                    </Link>
+                                    
                                     <span className="continent flex" >
                                         <IoBagHandleSharp className="icon" />
                                         <span className="name">
@@ -107,9 +111,11 @@ const Main = () => {
                                         <p>{description}</p>
                                     </div>
 
-                                    <button className="btn flex">
-                                        DETAILS <HiOutlineClipboardCheck className="icon" />
-                                    </button>
+                                    <Link to="/product">
+                                        <button className="btn flex">
+                                            DETAILS <HiOutlineClipboardCheck className="icon" />
+                                        </button>
+                                    </Link>
 
                                 </div>
                             </div>

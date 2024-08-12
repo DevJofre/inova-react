@@ -1,0 +1,121 @@
+.product-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #f5f5f5;
+    gap: 20px;
+  }
+  
+  .product-main {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    margin-top: 100px;
+  
+    @media (min-width: 721px) {
+      flex-direction: row;
+    }
+  }
+  
+  .product-image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 8px;
+  }
+  
+  .product-details {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1;
+  }
+  
+  .product-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .product-description {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+  
+  .product-price {
+    font-size: 1.5rem;
+    color: #ff5722;
+    margin-bottom: 20px;
+  }
+  
+  .product-quantity {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  
+    label {
+      font-size: 1rem;
+      margin-right: 10px;
+    }
+  
+    input {
+      width: 60px;
+      padding: 5px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+  }
+  
+  .add-to-cart-button {
+    background-color: #ff5722;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+  
+    &:hover {
+      background-color: #e64a19;
+    }
+  }
+  
+  .product-info-reviews {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .product-additional-info,
+  .product-reviews {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .product-additional-info ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .product-additional-info li {
+    margin-bottom: 10px;
+  }
+  
+  .product-reviews .review {
+    margin-bottom: 10px;
+  }
+  
+  @media (max-width: 720px) {
+    .product-main {
+      flex-direction: column;
+      gap: 20px;
+    }
+  
+    .product-info-reviews {
+      gap: 20px;
+    }
+  }
+  
