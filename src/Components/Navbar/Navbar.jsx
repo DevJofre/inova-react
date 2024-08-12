@@ -32,8 +32,8 @@ const Navbar = () => {
             </li>
 
             <li className="navItem">
-              <a href="http://localhost:3000/" className="navLink">
-                Shop
+              <a href="http://localhost:3000/profile" className="navLink">
+                Perfil
               </a>
             </li>
 

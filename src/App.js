@@ -5,7 +5,9 @@ import Navbar from "./Components/Navbar/Navbar";
 import Principal from "./pages/Principal";
 import Login from "./pages/Login";
 import Cadastro from "./pages/Cadastro";
+
 import "./firebaseConfig";
+import Usuario from "./pages/Usuario";
 
 const App = () => {
   return (
@@ -15,6 +17,7 @@ const App = () => {
         <Route path="/" exact element={<Principal />}></Route>
         <Route path="/login" exact element={<Login />}></Route>
         <Route path="/cadastro" exact element={<Cadastro />}></Route>
+        <Route path="/profile" exact element={<Usuario />}></Route>
       </Routes>
     </Router>
   );
