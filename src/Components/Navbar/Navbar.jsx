@@ -44,8 +44,8 @@ const Navbar = () => {
             </li>
 
             <li className="navItem">
-              <a href="http://localhost:3000/" className="navLink">
-                Contatos
+              <a href="http://localhost:3000/cart" className="navLink">
+                Carrinho
               </a>
             </li>
 

@@ -1,6 +1,8 @@
 import React from 'react';
 import './UserProfile.scss';
 
+
+
 const UserProfile = ({ user = {} }) => {
   return (
     <div className="user-profile-container">
