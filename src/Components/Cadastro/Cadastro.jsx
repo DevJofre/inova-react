@@ -14,23 +14,32 @@ const Cadastro = () => {
   const [number, setNumber] = useState('');
   const [zip, setZip] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [phone, setPhone] = useState('');
+  const [whatsapp, setWhatsapp] = useState('');
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    
+    // Verificar se os emails coincidem
     if (email !== confirmEmail) {
       alert('Os e-mails não coincidem.');
       return;
     }
 
-    
+    // Verificar se as senhas coincidem
+    if (password !== confirmPassword) {
+      alert('As senhas não coincidem.');
+      return;
+    }
+
+    // Criar usuário com Firebase Authentication
     const auth = getAuth();
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        
         console.log('User signed up:', userCredential.user);
       })
       .catch((error) => {
-        // Tratar erros
         console.error('Error during sign up:', error);
       });
   };
@@ -38,7 +47,8 @@ const Cadastro = () => {
   return (
     <div className="signup-container">
       <form className="signup-form" onSubmit={handleSubmit}>
-        <h2>Cadastro de Usuarios</h2>
+        <h2>Cadastro de Usuários</h2>
+        
         <div className="form-group">
           <label htmlFor="name">Nome:</label>
           <input
@@ -49,6 +59,7 @@ const Cadastro = () => {
             required
           />
         </div>
+        
         <div className="form-group">
           <label htmlFor="surname">Sobrenome:</label>
           <input
@@ -59,6 +70,7 @@ const Cadastro = () => {
             required
           />
         </div>
+        
         <div className="form-group">
           <label htmlFor="email">Email:</label>
           <input
@@ -69,6 +81,7 @@ const Cadastro = () => {
             required
           />
         </div>
+        
         <div className="form-group">
           <label htmlFor="confirm-email">Confirmação de Email:</label>
           <input
@@ -79,66 +92,7 @@ const Cadastro = () => {
             required
           />
         </div>
-        <div className="form-group">
-          <label htmlFor="cpf">CPF:</label>
-          <input
-            type="text"
-            id="cpf"
-            value={cpf}
-            onChange={(e) => setCpf(e.target.value)}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="city">Cidade:</label>
-          <input
-            type="text"
-            id="city"
-            value={city}
-            onChange={(e) => setCity(e.target.value)}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="state">Estado:</label>
-          <input
-            type="text"
-            id="state"
-            value={state}
-            onChange={(e) => setState(e.target.value)}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="street">Rua:</label>
-          <input
-            type="text"
-            id="street"
-            value={street}
-            onChange={(e) => setStreet(e.target.value)}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="number">Número:</label>
-          <input
-            type="text"
-            id="number"
-            value={number}
-            onChange={(e) => setNumber(e.target.value)}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="zip">CEP:</label>
-          <input
-            type="text"
-            id="zip"
-            value={zip}
-            onChange={(e) => setZip(e.target.value)}
-            required
-          />
-        </div>
+        
         <div className="form-group">
           <label htmlFor="password">Senha:</label>
           <input
@@ -149,6 +103,106 @@ const Cadastro = () => {
             required
           />
         </div>
+        
+        <div className="form-group">
+          <label htmlFor="confirm-password">Confirmação de Senha:</label>
+          <input
+            type="password"
+            id="confirm-password"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+            required
+          />
+        </div>
+        
+        <div className="form-group">
+          <label htmlFor="cpf">CPF:</label>
+          <input
+            type="text"
+            id="cpf"
+            value={cpf}
+            onChange={(e) => setCpf(e.target.value)}
+            required
+          />
+        </div>
+        
+        <div className="form-group">
+          <label htmlFor="phone">Telefone:</label>
+          <input
+            type="text"
+            id="phone"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+            required
+          />
+        </div>
+        
+        <div className="form-group">
+          <label htmlFor="whatsapp">WhatsApp:</label>
+          <input
+            type="text"
+            id="whatsapp"
+            value={whatsapp}
+            onChange={(e) => setWhatsapp(e.target.value)}
+            required
+          />
+        </div>
+        
+        <div className="form-group">
+          <label htmlFor="city">Cidade:</label>
+          <input
+            type="text"
+            id="city"
+            value={city}
+            onChange={(e) => setCity(e.target.value)}
+            required
+          />
+        </div>
+        
+        <div className="form-group">
+          <label htmlFor="state">Estado:</label>
+          <input
+            type="text"
+            id="state"
+            value={state}
+            onChange={(e) => setState(e.target.value)}
+            required
+          />
+        </div>
+        
+        <div className="form-group">
+          <label htmlFor="street">Rua:</label>
+          <input
+            type="text"
+            id="street"
+            value={street}
+            onChange={(e) => setStreet(e.target.value)}
+            required
+          />
+        </div>
+        
+        <div className="form-group">
+          <label htmlFor="number">Número:</label>
+          <input
+            type="text"
+            id="number"
+            value={number}
+            onChange={(e) => setNumber(e.target.value)}
+            required
+          />
+        </div>
+        
+        <div className="form-group">
+          <label htmlFor="zip">CEP:</label>
+          <input
+            type="text"
+            id="zip"
+            value={zip}
+            onChange={(e) => setZip(e.target.value)}
+            required
+          />
+        </div>
+        
         <button type="submit">Cadastrar</button>
       </form>
     </div>
