@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './cadastro.scss';
-import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
+import axios from 'axios';
 
 const Cadastro = () => {
   const [name, setName] = useState('');
@@ -20,7 +20,7 @@ const Cadastro = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     if (email !== confirmEmail) {
       alert('Os e-mails não coincidem.');
@@ -30,15 +30,36 @@ const Cadastro = () => {
       alert('As senhas não coincidem.');
       return;
     }
+    const requestBody =   {
+      name: name,
+      lastname: surname,
+      email: email,
+      password: password,
+      contact: phone,
+      role: "CLIENT",
+      address: {
+        street: street,
+        state: state,
+        city: city,
+        country: country,
+        number: number,
+        zip_code: zip,
+        complement: complement
+      },
+      whatsapp_contact: whatsapp
+    }
 
-    const auth = getAuth();
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        console.log('User signed up:', userCredential.user);
-      })
-      .catch((error) => {
-        console.error('Error during sign up:', error);
-      });
+    const request = await axios.post("http://localhost:4000/usuario", requestBody)
+    console.log(request)
+
+    // const auth = getAuth();
+    // createUserWithEmailAndPassword(auth, email, password)
+    //   .then((userCredential) => {
+    //     console.log('User signed up:', userCredential.user);
+    //   })
+    //   .catch((error) => {
+    //     console.error('Error during sign up:', error);
+    //   });
   };
 
   return (
