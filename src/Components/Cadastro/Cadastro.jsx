@@ -13,27 +13,24 @@ const Cadastro = () => {
   const [street, setStreet] = useState('');
   const [number, setNumber] = useState('');
   const [zip, setZip] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
+  const [country, setCountry] = useState('');
+  const [complement, setComplement] = useState('');
   const [phone, setPhone] = useState('');
   const [whatsapp, setWhatsapp] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    
-    // Verificar se os emails coincidem
     if (email !== confirmEmail) {
       alert('Os e-mails não coincidem.');
       return;
     }
-
-    // Verificar se as senhas coincidem
     if (password !== confirmPassword) {
       alert('As senhas não coincidem.');
       return;
     }
 
-    // Criar usuário com Firebase Authentication
     const auth = getAuth();
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
@@ -48,7 +45,6 @@ const Cadastro = () => {
     <div className="signup-container">
       <form className="signup-form" onSubmit={handleSubmit}>
         <h2>Cadastro de Usuários</h2>
-        
         <div className="form-group">
           <label htmlFor="name">Nome:</label>
           <input
@@ -59,7 +55,6 @@ const Cadastro = () => {
             required
           />
         </div>
-        
         <div className="form-group">
           <label htmlFor="surname">Sobrenome:</label>
           <input
@@ -70,7 +65,6 @@ const Cadastro = () => {
             required
           />
         </div>
-        
         <div className="form-group">
           <label htmlFor="email">Email:</label>
           <input
@@ -81,7 +75,6 @@ const Cadastro = () => {
             required
           />
         </div>
-        
         <div className="form-group">
           <label htmlFor="confirm-email">Confirmação de Email:</label>
           <input
@@ -92,7 +85,6 @@ const Cadastro = () => {
             required
           />
         </div>
-        
         <div className="form-group">
           <label htmlFor="password">Senha:</label>
           <input
@@ -103,7 +95,6 @@ const Cadastro = () => {
             required
           />
         </div>
-        
         <div className="form-group">
           <label htmlFor="confirm-password">Confirmação de Senha:</label>
           <input
@@ -114,7 +105,6 @@ const Cadastro = () => {
             required
           />
         </div>
-        
         <div className="form-group">
           <label htmlFor="cpf">CPF:</label>
           <input
@@ -125,7 +115,6 @@ const Cadastro = () => {
             required
           />
         </div>
-        
         <div className="form-group">
           <label htmlFor="phone">Telefone:</label>
           <input
@@ -136,7 +125,6 @@ const Cadastro = () => {
             required
           />
         </div>
-        
         <div className="form-group">
           <label htmlFor="whatsapp">WhatsApp:</label>
           <input
@@ -147,7 +135,16 @@ const Cadastro = () => {
             required
           />
         </div>
-        
+        <div className="form-group">
+          <label htmlFor="country">País:</label>
+          <input
+            type="text"
+            id="country"
+            value={country}
+            onChange={(e) => setCountry(e.target.value)}
+            required
+          />
+        </div>
         <div className="form-group">
           <label htmlFor="city">Cidade:</label>
           <input
@@ -158,7 +155,6 @@ const Cadastro = () => {
             required
           />
         </div>
-        
         <div className="form-group">
           <label htmlFor="state">Estado:</label>
           <input
@@ -169,7 +165,6 @@ const Cadastro = () => {
             required
           />
         </div>
-        
         <div className="form-group">
           <label htmlFor="street">Rua:</label>
           <input
@@ -180,7 +175,6 @@ const Cadastro = () => {
             required
           />
         </div>
-        
         <div className="form-group">
           <label htmlFor="number">Número:</label>
           <input
@@ -191,7 +185,15 @@ const Cadastro = () => {
             required
           />
         </div>
-        
+        <div className="form-group">
+          <label htmlFor="complement">Complemento:</label>
+          <input
+            type="text"
+            id="complement"
+            value={complement}
+            onChange={(e) => setComplement(e.target.value)}
+          />
+        </div>
         <div className="form-group">
           <label htmlFor="zip">CEP:</label>
           <input
@@ -202,7 +204,6 @@ const Cadastro = () => {
             required
           />
         </div>
-        
         <button type="submit">Cadastrar</button>
       </form>
     </div>
