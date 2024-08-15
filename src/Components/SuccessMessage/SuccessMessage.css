@@ -1,0 +1,35 @@
+.success-message-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.success-message-box {
+  text-align: center;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.success-message-box h2 {
+  margin-bottom: 10px;
+  color: #28a745;
+}
+.success-message-box p {
+  margin-bottom: 20px;
+  color: #333;
+}
+.success-message-box button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.success-message-box button:hover {
+  background-color: #0056b3;
+}/*# sourceMappingURL=SuccessMessage.css.map */

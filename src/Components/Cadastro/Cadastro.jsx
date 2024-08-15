@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './cadastro.scss';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom'; // Importar useNavigate
 
 const Cadastro = () => {
   const [name, setName] = useState('');
@@ -20,6 +21,8 @@ const Cadastro = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
+  const navigate = useNavigate(); // Usar useNavigate para navegação
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (email !== confirmEmail) {
@@ -30,7 +33,8 @@ const Cadastro = () => {
       alert('As senhas não coincidem.');
       return;
     }
-    const requestBody =   {
+
+    const requestBody = {
       name: name,
       lastname: surname,
       email: email,
@@ -48,25 +52,24 @@ const Cadastro = () => {
         complement: complement
       },
       whatsapp_contact: whatsapp
+    };
+
+    try {
+      const response = await axios.post("http://localhost:4000/usuario", requestBody);
+      console.log(response);
+
+      
+      navigate('/success'); 
+    } catch (error) {
+      console.error('Erro durante o cadastro:', error);
     }
-
-    const request = await axios.post("http://localhost:4000/usuario", requestBody)
-    console.log(request)
-
-    // const auth = getAuth();
-    // createUserWithEmailAndPassword(auth, email, password)
-    //   .then((userCredential) => {
-    //     console.log('User signed up:', userCredential.user);
-    //   })
-    //   .catch((error) => {
-    //     console.error('Error during sign up:', error);
-    //   });
   };
 
   return (
     <div className="signup-container">
       <form className="signup-form" onSubmit={handleSubmit}>
         <h2>Cadastro de Usuários</h2>
+        {/* Resto do formulário */}
         <div className="form-group">
           <label htmlFor="name">Nome:</label>
           <input

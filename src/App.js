@@ -9,6 +9,7 @@ import Cadastro from "./pages/Cadastro";
 import Usuario from "./pages/Usuario";
 import Cart from "./pages/CartPage";
 import Product from "./pages/Product";
+import SuccessMessageP from "./pages/Success.js";
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
         <Route path="/profile" exact element={<Usuario />}></Route>
         <Route path="/cart" exact element={<Cart />}></Route>
         <Route path="/product" exact element={<Product />}></Route>
+        <Route path="/success" exact element={<SuccessMessageP />}></Route>
       </Routes>
     </Router>
   );
