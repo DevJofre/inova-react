@@ -36,6 +36,7 @@ const Cadastro = () => {
       email: email,
       password: password,
       contact: phone,
+      cpf: cpf,
       role: "CLIENT",
       address: {
         street: street,
