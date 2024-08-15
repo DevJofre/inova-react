@@ -57,7 +57,7 @@ const Navbar = () => {
 
             <li className="navItem">
               <a href="http://localhost:3000/cadastro" className="navLink">
-                Cadastra
+                Cadastro
               </a>
             </li>
 
