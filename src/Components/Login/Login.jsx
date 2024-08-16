@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 import { FcGoogle } from 'react-icons/fc';
+import { setToken } from '../../auth';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -17,12 +18,7 @@ const Login = () => {
       const response = await axios.post("http://localhost:4000/login", { email, password });
 
       if (response.status === 200) {
-        console.log('Login successful:', response.data);
-
-        // Salvar o token no localStorage ou state global
-        localStorage.setItem('token', response.data.token);
-
-
+        setToken(response.data.token)
         navigate('/profile');
       }
     } catch (error) {

@@ -3,6 +3,7 @@ import "./navbar.css";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { TbGridDots } from "react-icons/tb";
 import {Link} from "react-router-dom"
+import { isLoggedIn } from "../../auth";
 
 const Navbar = () => {
   const [active, setActive] = useState("navBar");
@@ -30,12 +31,16 @@ const Navbar = () => {
                 Inicio
               </a>
             </li>
-
-            <li className="navItem">
+            {isLoggedIn() ? (
+              <li className="navItem">
               <a href="http://localhost:3000/profile" className="navLink">
                 Perfil
               </a>
             </li>
+            ): (
+              <></>
+            )}
+
 
             <li className="navItem">
               <a href="http://localhost:3000/" className="navLink">
@@ -55,15 +60,23 @@ const Navbar = () => {
               </a>
             </li>
 
-            <li className="navItem">
+            {!isLoggedIn() ? (
+              <li className="navItem">
               <a href="http://localhost:3000/cadastro" className="navLink">
                 Cadastro
               </a>
             </li>
+            ): (
+              <></>
+            )}
 
-            <button className="btn">
-              <Link to="/login" > Entra </Link>
+            {!isLoggedIn() ? (
+              <button className="btn">
+              <Link to="/login" > Entrar </Link>
             </button>
+            ): (
+              <></>
+            )}
           </ul>
 
           <div onClick={removeNav} className="closeNavbar">
