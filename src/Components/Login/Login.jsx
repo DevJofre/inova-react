@@ -1,31 +1,57 @@
 import React, { useState } from 'react';
 import './login.scss';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
-import { FcGoogle } from 'react-icons/fc'; 
+import { FcGoogle } from 'react-icons/fc';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    
-    console.log('Email:', email);
-    console.log('Password:', password);
+
+    try {
+      const response = await axios.post("http://localhost:4000/login", { email, password });
+
+      if (response.status === 200) {
+        console.log('Login successful:', response.data);
+
+        // Salvar o token no localStorage ou state global
+        localStorage.setItem('token', response.data.token);
+
+
+        navigate('/profile');
+      }
+    } catch (error) {
+      console.error('Erro durante o login:', error);
+    }
   };
 
   const handleGoogleLogin = () => {
     const auth = getAuth();
     const provider = new GoogleAuthProvider();
-    
+
     signInWithPopup(auth, provider)
-      .then((result) => {
-        
-        console.log('Google Sign-In successful:', result.user);
+      .then(async (result) => {
+        const token = await result.user.getIdToken();
+
+        const response = await axios.post('http://localhost:4000/google-login', { token });
+
+        if (response.status === 200) {
+          console.log('Google Login successful:', response.data);
+
+
+          localStorage.setItem('token', response.data.token);
+
+
+          navigate('/profile');
+        }
       })
       .catch((error) => {
-        // Tratar erros
-        console.error('Error during Google Sign-In:', error);
+        console.error('Erro durante o Google Sign-In:', error);
       });
   };
 
