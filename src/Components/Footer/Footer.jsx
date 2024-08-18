@@ -47,7 +47,7 @@ const Footer = () => {
         <div className="footerCard flex">
           <div className="footerIntro flex">
             <div className="logoDiv">
-              <a href="http://localhost:3000/123" className="logo flex">
+              <a href="/" className="logo flex">
                 <FaCentos className="icon" />
                 Inova
               </a>

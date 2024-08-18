@@ -19,7 +19,7 @@ const Navbar = () => {
     <section className="navbarSection">
       <header className="header flex">
         <div className="logoDiv">
-          <a href="http://localhost:3000/" className="logo flex">
+          <a href="/" className="logo flex">
             <h1> Inova </h1>
           </a>
         </div>
@@ -27,13 +27,13 @@ const Navbar = () => {
         <div className={active}>
           <ul className="navLists flex">
             <li className="navItem">
-              <a href="http://localhost:3000/" className="navLink">
+              <a href="/" className="navLink">
                 Inicio
               </a>
             </li>
             {isLoggedIn() ? (
               <li className="navItem">
-              <a href="http://localhost:3000/profile" className="navLink">
+              <a href="/profile" className="navLink">
                 Perfil
               </a>
             </li>
@@ -43,26 +43,26 @@ const Navbar = () => {
 
 
             <li className="navItem">
-              <a href="http://localhost:3000/" className="navLink">
+              <a href="/" className="navLink">
                 Sobre
               </a>
             </li>
 
             <li className="navItem">
-              <a href="http://localhost:3000/cart" className="navLink">
+              <a href="/cart" className="navLink">
                 Carrinho
               </a>
             </li>
 
             <li className="navItem">
-              <a href="http://localhost:3000/" className="navLink">
+              <a href="/" className="navLink">
                 Suporte
               </a>
             </li>
 
             {!isLoggedIn() ? (
               <li className="navItem">
-              <a href="http://localhost:3000/cadastro" className="navLink">
+              <a href="/cadastro" className="navLink">
                 Cadastro
               </a>
             </li>
