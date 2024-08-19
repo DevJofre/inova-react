@@ -15,7 +15,7 @@ const Login = () => {
     event.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:4000/login", { email, password });
+      const response = await axios.post("http://ec2-18-188-56-228.us-east-2.compute.amazonaws.com:4000/login", { email, password });
 
       if (response.status === 200) {
         setToken(response.data.token)
@@ -34,7 +34,7 @@ const Login = () => {
       .then(async (result) => {
         const token = await result.user.getIdToken();
 
-        const response = await axios.post('http://localhost:4000/google-login', { token });
+        const response = await axios.post('http://ec2-18-188-56-228.us-east-2.compute.amazonaws.com:4000/google-login', { token });
 
         if (response.status === 200) {
           console.log('Google Login successful:', response.data);
